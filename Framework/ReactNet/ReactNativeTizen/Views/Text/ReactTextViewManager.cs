@@ -18,8 +18,9 @@ namespace ReactNative.Views.Text
     /// </summary>
     public class ReactTextViewManager : BaseViewManager<ReactTextView, ReactTextShadowNode>
     {
-        [DllImport("libevas.so.1")]
-        internal static extern void evas_font_path_global_append(string path);
+        //[DllImport("libevas.so.1")]
+        //internal static extern void evas_font_path_global_append(string path);
+
         public ReactTextViewManager() : base()
         {
             Utility.AppendGlobalFontPath(Application.Current.DirectoryInfo.SharedResource + "font");

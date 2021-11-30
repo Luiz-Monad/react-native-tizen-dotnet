@@ -119,7 +119,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 			Log.Info(ReactConstants.Tag, "[RCTPathAddEllipticArc] origin.x:" + origin.x + ", origin.y:" + origin.y + ", startAngle:" + startAngle + ", endAngle:" + endAngle);	
 
 			// add a new arc path here in cairo context
-			Cairo.cairo_arc(cr, origin.x, origin.y, radius, startAngle, endAngle);   
+			//Cairo.cairo_arc(cr, origin.x, origin.y, radius, startAngle, endAngle);   
 
 			//Cairo.cairo_stroke(cairo);
 			return radius;
@@ -210,17 +210,18 @@ namespace ReactNative.Views.ReactBorderDrawing
 
 
 			// begin a new cairo drawing path without current point
-			Cairo.cairo_new_sub_path(cairo);
+			//Cairo.cairo_new_sub_path(cairo);
 
 			RCTPathAddEllipticArc(cairo, IntPtr.Zero, p1, topLeft, Math.PI, 3 * Math.PI/2, false); 
 			RCTPathAddEllipticArc(cairo, IntPtr.Zero, p2, topRight, 3 * Math.PI/2, 0, false); 
 			RCTPathAddEllipticArc(cairo, IntPtr.Zero, p3, bottomRight, 0, Math.PI/2, false); 
-			RCTPathAddEllipticArc(cairo, IntPtr.Zero, p4, bottomLeft, Math.PI/2, Math.PI, false);		
+			RCTPathAddEllipticArc(cairo, IntPtr.Zero, p4, bottomLeft, Math.PI/2, Math.PI, false);
 
 			/// auto close the current by draw a line to the init point
-			Cairo.cairo_close_path(cairo);
+			//Cairo.cairo_close_path(cairo);
 
-			IntPtr path = Cairo.cairo_copy_path(cairo);
+			IntPtr path = IntPtr.Zero;
+			//IntPtr path = Cairo.cairo_copy_path(cairo);
 			//Cairo.cairo_stroke(cairo);
 
 			return path; 
@@ -287,9 +288,9 @@ namespace ReactNative.Views.ReactBorderDrawing
 				Log.Info(ReactConstants.Tag, "[RCTPathCreateOuterOutline] rect.origin.x:" + rect.origin.x + ", rect.origin.y:" + rect.origin.y + ", rect.size.width:" + rect.size.width + ", rect.size.height:" + rect.size.height);
 
 				// add a new rectangle path here in cairo context
-				Cairo.cairo_rectangle(cairo,rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+				//Cairo.cairo_rectangle(cairo,rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
 
-				pathOuter = Cairo.cairo_copy_path(cairo);
+				//pathOuter = Cairo.cairo_copy_path(cairo);
 				//Cairo.cairo_stroke(cairo);	 
 
 				return;	 
@@ -305,16 +306,16 @@ namespace ReactNative.Views.ReactBorderDrawing
 		{ 
 
 			/// create cairo surface and context here
-			surface = Cairo.cairo_image_surface_create(0, 1920, 1080);
-			cairo = Cairo.cairo_create(surface);
+			//surface = Cairo.cairo_image_surface_create(0, 1920, 1080);
+			//cairo = Cairo.cairo_create(surface);
 
 			/* clear background as white */
-			Cairo.cairo_set_source_rgba(cairo, 1, 1, 1, 1);
-			Cairo.cairo_paint(cairo);   
+			//Cairo.cairo_set_source_rgba(cairo, 1, 1, 1, 1);
+			//Cairo.cairo_paint(cairo);   
 
 			// set default stroke line width and color for Cairo context
-			Cairo.cairo_set_line_width(cairo, 1.0);
-			Cairo.cairo_set_source_rgba(cairo, 0, 0, 0, 1);  //black line
+			//Cairo.cairo_set_line_width(cairo, 1.0);
+			//Cairo.cairo_set_source_rgba(cairo, 0, 0, 0, 1);  //black line
 
 		} 
  
@@ -334,10 +335,10 @@ namespace ReactNative.Views.ReactBorderDrawing
 			Log.Info(ReactConstants.Tag, "[RCTContextAddLines] points[0].x:" + points[0].x + ", points[0].y:" + points[0].y + ", points[1].x:" + points[1].x + ", points[1].y:" + points[1].y);
 			Log.Info(ReactConstants.Tag, "[RCTContextAddLines] points[2].x:" + points[2].x + ", points[2].y:" + points[2].y + ", points[3].x:" + points[3].x + ", points[3].y:" + points[3].y);
 
-			Cairo.cairo_move_to(cairo, points[0].x, points[0].y);
+			//Cairo.cairo_move_to(cairo, points[0].x, points[0].y);
 			for(int n = 1; n<count; n++)
 			{
-				Cairo.cairo_line_to(cairo, points[n].x, points[n].y);
+				//Cairo.cairo_line_to(cairo, points[n].x, points[n].y);
 			}
 			//Cairo.cairo_stroke(cairo);
 
@@ -350,24 +351,24 @@ namespace ReactNative.Views.ReactBorderDrawing
 			uint g = (color >> 8) & 0xFF;  
 			uint r = (color >> 16) & 0xFF;
 
-			Cairo.cairo_set_source_rgba(cairo, r, g, b, 1);  //black alpha default
+			//Cairo.cairo_set_source_rgba(cairo, r, g, b, 1);  //black alpha default
 		}
  
 		void RCTContextSetFillColorWithColor(IntPtr cr, Color color)
 		{
 			// set with Color parsed value
-			Cairo.cairo_set_source_rgba(cairo, color.R, color.G, color.B, color.A);
+			//Cairo.cairo_set_source_rgba(cairo, color.R, color.G, color.B, color.A);
 		}
  
  
 		void RCTContextSaveCurrentImage()
 		{
 			// for temp test
-			Cairo.cairo_surface_flush(surface);	  
+			//Cairo.cairo_surface_flush(surface);	  
 
 			/* Save the generated cairo surface image data to PNG file from Memories */	  
 			string path = Tizen.Applications.Application.Current.DirectoryInfo.Data + "CairoBorder.png";
-			Cairo.cairo_surface_write_to_png(surface, path);
+			//Cairo.cairo_surface_write_to_png(surface, path);
 			pathImage = path;
 			//return path;
 			return;
@@ -376,14 +377,14 @@ namespace ReactNative.Views.ReactBorderDrawing
 		void RCTContextUpdateCurrentImage()
 		{
 			// for temp test
-			Cairo.cairo_surface_flush(surface);
+			//Cairo.cairo_surface_flush(surface);
 
 			/* display cairo drawin on screen */
-			img = Cairo.evas_object_image_filled_add(ReactProgram.RctWindow);	
-			IntPtr imageData = Cairo.cairo_image_surface_get_data(surface);
-			Cairo.evas_object_image_data_set(img, imageData);
+			//img = Cairo.evas_object_image_filled_add(ReactProgram.RctWindow);	
+			//IntPtr imageData = Cairo.cairo_image_surface_get_data(surface);
+			//Cairo.evas_object_image_data_set(img, imageData);
 
-			Cairo.evas_object_image_data_update_add(img, 0, 0, 1920, 1080);
+			//Cairo.evas_object_image_data_update_add(img, 0, 0, 1920, 1080);
 			return;
 		}
  
@@ -448,22 +449,22 @@ namespace ReactNative.Views.ReactBorderDrawing
 				RCTContextSetFillColorWithColor(cairo, backgroundColor);	  
 				//RCTContextSetFillColorWithUint(cairo, backgroundColor);
 
-				Cairo.cairo_fill(cairo);
+				//Cairo.cairo_fill(cairo);
 			} 
 
 
 			// for Cairo instead, draw rounded Rectangle path here   
-			Cairo.cairo_append_path(cairo, pathOuter);
+			//Cairo.cairo_append_path(cairo, pathOuter);
 			pathInner = RCTPathCreateWithRoundedRect(UIEdgeInsetsInsetRect(rect, borderInsets), cornerInsets);
 			//Cairo.cairo_append_path(cairo, pathInner);
 
 			/// Clip the outerpath with inner path  by eod rule..
-			Cairo.cairo_set_fill_rule(cairo, Cairo.cairo_fill_rule_t.CAIRO_FILL_RULE_EVEN_ODD);
+			//Cairo.cairo_set_fill_rule(cairo, Cairo.cairo_fill_rule_t.CAIRO_FILL_RULE_EVEN_ODD);
 			//Cairo.cairo_set_fill_rule(cairo, Cairo.cairo_fill_rule_t.CAIRO_FILL_RULE_WINDING);   
-			Cairo.cairo_clip(cairo);
+			//Cairo.cairo_clip(cairo);
 
 			RCTContextSetFillColorWithUint(cairo, borderColors.left);
-			Cairo.cairo_paint(cairo);
+			//Cairo.cairo_paint(cairo);
 
 
 			bool hasEqualColors = RCTBorderColorsAreEqual(borderColors);
@@ -474,7 +475,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 				Log.Info(ReactConstants.Tag, "[RCTGetSolidBorderImage] rect.origin.x:" + rect.origin.x + ", rect.origin.y:" + rect.origin.y + ", rect.size.width:" + rect.size.width + ", rect.size.height:" + rect.size.height);	
 
 				RCTContextSetFillColorWithUint(cairo, borderColors.left);	
-				Cairo.cairo_paint(cairo);
+				//Cairo.cairo_paint(cairo);
 
 			} 
 			else 
@@ -596,7 +597,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 					if (!(currentColor == borderColors.bottom)) 
 					{ 
 						RCTContextSetFillColorWithUint(cairo, currentColor); 
-						Cairo.cairo_fill(cairo); 
+						//Cairo.cairo_fill(cairo); 
 						currentColor = borderColors.bottom; 
 					} 
 					RCTContextAddLines(cairo, points, 4);
@@ -619,7 +620,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 					if (!(currentColor == borderColors.left)) 
 					{ 
 						RCTContextSetFillColorWithUint(cairo, currentColor); 
-						Cairo.cairo_fill(cairo); 
+						//Cairo.cairo_fill(cairo); 
 						currentColor = borderColors.left; 
 					}
 					RCTContextAddLines(cairo, points, 4);
@@ -642,7 +643,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 					if (!(currentColor == borderColors.top)) 
 					{ 
 						RCTContextSetFillColorWithUint(cairo, currentColor); 
-						Cairo.cairo_fill(cairo); 
+						//Cairo.cairo_fill(cairo); 
 						currentColor = borderColors.top; 
 					}
 					RCTContextAddLines(cairo, points, 4);
@@ -650,7 +651,7 @@ namespace ReactNative.Views.ReactBorderDrawing
 			 
 
 				RCTContextSetFillColorWithUint(cairo, currentColor);
-				Cairo.cairo_fill(cairo);
+				//Cairo.cairo_fill(cairo);
 			}
 
 			RCTContextSaveCurrentImage();
@@ -962,158 +963,158 @@ namespace ReactNative.Views.ReactBorderDrawing
     {
         internal const string Libc = "libc.so.6";
         internal const string Libdl = "libdl.so.2";
-        internal const string Evas = "libevas.so.1";
-        internal const string Elementary = "libelementary.so.1";
-        internal const string Eina = "libeina.so.1";
-        internal const string Ecore = "libecore.so.1";
-        internal const string EcoreInput = "libecore_input.so.1";
-        internal const string Eo = "libeo.so.1";
-        internal const string Eext = "libefl-extension.so.0";
+        // internal const string Evas = "libevas.so.1";
+        //internal const string Elementary = "libelementary.so.1";
+        //internal const string Eina = "libeina.so.1";
+        //internal const string Ecore = "libecore.so.1";
+        //internal const string EcoreInput = "libecore_input.so.1";
+        //internal const string Eo = "libeo.so.1";
+        //internal const string Eext = "libefl-extension.so.0";
         // we use libCairo ref for border drawing
-        internal const string Cairo = "libcairo.so.2";
+        // internal const string Cairo = "libcairo.so.2";
     }
 	
 
     internal static partial class Cairo
     {
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_file_set(IntPtr obj, string file, string key);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_file_set(IntPtr obj, string file, string key);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_border_set(IntPtr obj, int l, int r, int t, int b);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_border_set(IntPtr obj, int l, int r, int t, int b);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_alpha_set(IntPtr obj, bool has_alpha);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_alpha_set(IntPtr obj, bool has_alpha);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern bool evas_object_image_alpha_get(IntPtr obj);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern bool evas_object_image_alpha_get(IntPtr obj);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern LoadError evas_object_image_load_error_get(IntPtr obj);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern LoadError evas_object_image_load_error_get(IntPtr obj);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_size_get(IntPtr obj, IntPtr x, out int y);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_size_get(IntPtr obj, IntPtr x, out int y);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_size_get(IntPtr obj, out int x, IntPtr y);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_size_get(IntPtr obj, out int x, IntPtr y);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_size_get(IntPtr obj, out int x, out int y);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_size_get(IntPtr obj, out int x, out int y);
 		
 		
 		// jicheng add for border test
-		[DllImport(Libraries.Evas)]
-        internal static extern IntPtr evas_object_image_filled_add(IntPtr evas);
+		// [DllImport(Libraries.Evas)]
+        // internal static extern IntPtr evas_object_image_filled_add(IntPtr evas);
         //
 
-        [DllImport(Libraries.Evas)]
+        // [DllImport(Libraries.Evas)]
         //internal static extern unsafe void evas_object_image_data_set(IntPtr obj, char* data);
-        internal static extern void evas_object_image_data_set(IntPtr obj, IntPtr data);
+        // internal static extern void evas_object_image_data_set(IntPtr obj, IntPtr data);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_size_set(IntPtr obj, int w, int h);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_size_set(IntPtr obj, int w, int h);
 
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_image_data_update_add(IntPtr obj, int x, int y, int w, int h);
-
-
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_show(IntPtr obj);
-
-        [DllImport(Libraries.Evas)]
-        internal static extern void evas_object_move(IntPtr obj, int x, int y);
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_image_data_update_add(IntPtr obj, int x, int y, int w, int h);
 
 
-        // add API for Cairo
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_image_surface_create(int obj, int w, int h);
-        //
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_show(IntPtr obj);
 
-        [DllImport(Libraries.Cairo)]
-        //internal static extern unsafe void cairo_set_source_rgba(IntPtr obj, char* data);
-        internal static extern void cairo_set_source_rgba(IntPtr obj, double red, double green, double blue, double alpha);
-        //
+        // [DllImport(Libraries.Evas)]
+        // internal static extern void evas_object_move(IntPtr obj, int x, int y);
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_create(IntPtr obj);
-        //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_destroy(IntPtr obj);
-        //
+        // // add API for Cairo
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_image_surface_create(int obj, int w, int h);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_surface_destroy(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // //internal static extern unsafe void cairo_set_source_rgba(IntPtr obj, char* data);
+        // internal static extern void cairo_set_source_rgba(IntPtr obj, double red, double green, double blue, double alpha);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_image_surface_get_data(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_create(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_get_target(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_destroy(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_surface_flush(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_surface_destroy(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_paint(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_image_surface_get_data(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_stroke(IntPtr obj);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_get_target(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_set_line_width(IntPtr obj, double width);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_surface_flush(IntPtr obj);
+        // //
+
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_paint(IntPtr obj);
+        // //
+
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_stroke(IntPtr obj);
+        // //
+
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_set_line_width(IntPtr obj, double width);
+        // //
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_move_to(IntPtr obj, double x, double y);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_move_to(IntPtr obj, double x, double y);
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_line_to(IntPtr obj, double x, double y);
-		//
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_line_to(IntPtr obj, double x, double y);
+		// //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_rectangle(IntPtr obj, double x, double y, double width, double height);
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_rectangle(IntPtr obj, double x, double y, double width, double height);
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_arc(IntPtr obj, double x, double y, double r, double ang1, double ang2);
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_arc(IntPtr obj, double x, double y, double r, double ang1, double ang2);
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_fill(IntPtr obj);
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_fill(IntPtr obj);
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_clip(IntPtr obj);
-        //
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_clip(IntPtr obj);
+        // //
 
-        [DllImport(Libraries.Cairo)]
-        internal static extern void cairo_surface_write_to_png(IntPtr obj, string file);
-        //
+        // [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_surface_write_to_png(IntPtr obj, string file);
+        // //
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern IntPtr cairo_copy_path(IntPtr obj);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern IntPtr cairo_copy_path(IntPtr obj);
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_append_path(IntPtr obj, IntPtr path);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_append_path(IntPtr obj, IntPtr path);
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_close_path(IntPtr obj);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_close_path(IntPtr obj);
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_new_sub_path(IntPtr obj);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_new_sub_path(IntPtr obj);
 		
-		internal enum cairo_fill_rule_t
-        {
-            CAIRO_FILL_RULE_WINDING = 0,
-            CAIRO_FILL_RULE_EVEN_ODD = 1,
-        }
+		// internal enum cairo_fill_rule_t
+        // {
+        //     CAIRO_FILL_RULE_WINDING = 0,
+        //     CAIRO_FILL_RULE_EVEN_ODD = 1,
+        // }
 		
-		[DllImport(Libraries.Cairo)]
-        internal static extern void cairo_set_fill_rule(IntPtr obj, cairo_fill_rule_t fill_rule);
+		// [DllImport(Libraries.Cairo)]
+        // internal static extern void cairo_set_fill_rule(IntPtr obj, cairo_fill_rule_t fill_rule);
 		
 
         internal enum LoadError

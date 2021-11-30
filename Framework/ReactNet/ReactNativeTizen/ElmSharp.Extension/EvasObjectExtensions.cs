@@ -19,8 +19,8 @@ namespace ReactNativeTizen.ElmSharp.Extension
     {
         #region "## For Animation 2017-05-04 ##"
         internal const string Eina = "libeina.so.1";
-        internal const string Ecore = "libecore.so.1";
-        internal const string Elementary = "libelementary.so.1";
+        // internal const string Ecore = "libecore.so.1";
+        // internal const string Elementary = "libelementary.so.1";
         internal delegate bool EcoreTimelineCallback(IntPtr data, double pos);
 
         internal enum POS_MAPPINGS
@@ -45,32 +45,32 @@ namespace ReactNativeTizen.ElmSharp.Extension
 
         #region "## For Animation 2017-05-04 ##"
 
-        [DllImport(Ecore)]
-        internal static extern void ecore_animator_frametime_set(double frametime);
+        // [DllImport(Ecore)]
+        // internal static extern void ecore_animator_frametime_set(double frametime);
 
-        [DllImport(Ecore)]
-        internal static extern IntPtr ecore_animator_timeline_add(double runtime, EcoreTimelineCallback cb, IntPtr data);
+        // [DllImport(Ecore)]
+        // internal static extern IntPtr ecore_animator_timeline_add(double runtime, EcoreTimelineCallback cb, IntPtr data);
 
-        [DllImport(Ecore)]
-        internal static extern double ecore_animator_pos_map(double pos, POS_MAPPINGS ecore_pos_type, double v1, double v2);
+        // [DllImport(Ecore)]
+        // internal static extern double ecore_animator_pos_map(double pos, POS_MAPPINGS ecore_pos_type, double v1, double v2);
 
-        [DllImport(Ecore)]
-        internal static extern void ecore_animator_freeze(IntPtr data);
+        // [DllImport(Ecore)]
+        // internal static extern void ecore_animator_freeze(IntPtr data);
 
-        [DllImport(Ecore)]
-        internal static extern void ecore_animator_thaw(IntPtr data);
+        // [DllImport(Ecore)]
+        // internal static extern void ecore_animator_thaw(IntPtr data);
 
-        [DllImport(Elementary)]
-        internal static extern void edje_scale_set(double data);
+        // [DllImport(Elementary)]
+        // internal static extern void edje_scale_set(double data);
 
-        [DllImport(Elementary)]
-        internal static extern double edje_scale_get();
+        // [DllImport(Elementary)]
+        // internal static extern double edje_scale_get();
 
-        [DllImport(Elementary)]
-        internal static extern void edje_transition_duration_factor_set(double scale);
+        // [DllImport(Elementary)]
+        // internal static extern void edje_transition_duration_factor_set(double scale);
 
-        [DllImport(Elementary)]
-        internal static extern double edje_transition_duration_factor_get();
+        // [DllImport(Elementary)]
+        // internal static extern double edje_transition_duration_factor_get();
 
         //static EcoreTimelineCallback _nativeHandler;
 
