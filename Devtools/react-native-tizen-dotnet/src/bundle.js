@@ -14,18 +14,18 @@ const llog = str => _log('Bundle','INFO', str);
     llog(`Output Bundle Path: ${packageDir}`);
 
     //bundle: '        --dev false'
-    const RN = format(`${appPath}/node_modules/react-native/packager/`);
+    // const RN = format(`${appPath}/node_modules/react-native/packager/`);
 
-    replaceTizen(format(`${RN}defaults.js`), /react-native-windows/g, 'react-native-tizen-dotnet');
-    replaceTizen(format(`${RN}defaults.js`), /windows/g, 'tizen');
-    replaceTizen(format(`${RN}src/node-haste/lib/getPlatformExtension.js`), /web/g, 'tizen');
+    // replaceTizen(format(`${RN}defaults.js`), /react-native-windows/g, 'react-native-tizen-dotnet');
+    // replaceTizen(format(`${RN}defaults.js`), /windows/g, 'tizen');
+    // replaceTizen(format(`${RN}src/node-haste/lib/getPlatformExtension.js`), /web/g, 'tizen');
     
 
-    function replaceTizen(file, reg, key) {
-        let data = fse.readFileSync(file, 'utf8');
-        let result = data.replace(reg, key);
-        fse.writeFileSync(file, result, 'utf8');
-    }
+    // function replaceTizen(file, reg, key) {
+    //     let data = fse.readFileSync(file, 'utf8');
+    //     let result = data.replace(reg, key);
+    //     fse.writeFileSync(file, result, 'utf8');
+    // }
 
     function mode(cmd) {
         if (!cmd) {

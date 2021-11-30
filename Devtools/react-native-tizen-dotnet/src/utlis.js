@@ -3,13 +3,14 @@ import path from 'path';
 
 const _log = (mod, type, str) => console.log(`[${Date()}][${mod}][${type}]: ${str}`)
 
-const appPath = path.dirname(require.main.filename).split('node_modules')[0];
+//const appPath = path.dirname(require.main.filename).split('node_modules')[0];
+var appPath = process.cwd();
 _log('Util','INFO', `App current path : ${appPath}`);
 
 const appName = path.basename(appPath);
 _log('Util','INFO', `App Name : ${appName}`);
 
-const pkgPath = path.normalize(appPath + 'package.json');
+const pkgPath = path.normalize(path.join(appPath, 'package.json'));
 _log('Util','INFO', `Loading config file from : ${pkgPath}`);
 
 let {config} = require(pkgPath);
