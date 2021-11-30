@@ -12,8 +12,8 @@
 
 var ReactTizen = {
   // Components
-  get GridView() { return require('GridView'); },
-  get MediaPlayer() {return require('MediaPlayer');},
+  //get GridView() { return require('GridView'); },
+  //get MediaPlayer() {return require('MediaPlayer');},
   //get ProgressBar() { return require('ProgressBar'); },
 };
 
