@@ -4,7 +4,6 @@ using ReactNative.Common;
 using ReactNative.Tracing;
 using ReactNative.Modules.DevSupport;
 using System;
-using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using ReactNativeTizen.ElmSharp.Extension;
 

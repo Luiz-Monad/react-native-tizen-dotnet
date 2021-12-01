@@ -1,11 +1,7 @@
 ﻿#define ENABLED
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Tizen;
-using ReactNative.Common;
 
 namespace ReactNative.UIManager
 {

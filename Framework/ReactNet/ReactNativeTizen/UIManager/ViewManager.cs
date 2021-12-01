@@ -2,11 +2,11 @@
 //using ReactNative.Touch;
 using System;
 using System.Collections.Generic;
-using Tizen;
 using ElmSharp;
 using static System.FormattableString;
 
 using ReactNativeTizen.ElmSharp.Extension;
+using ReactNative.Common;
 
 namespace ReactNative.UIManager
 {

@@ -11,10 +11,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using PCLStorage;
-using System.Reflection;
-using System.Windows;
 
-using Tizen;
 using Tizen.Applications;
 
 namespace ReactNative.DevSupport

@@ -4,10 +4,10 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
-using Tizen;
 using Tizen.Multimedia;
 using ElmSharp;
 using System.Threading;
+using ReactNative.Common;
 
 namespace ReactNative.Modules.MediaPlayer
 {

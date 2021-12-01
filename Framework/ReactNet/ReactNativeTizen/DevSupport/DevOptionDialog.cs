@@ -1,9 +1,7 @@
 using System;
 using ElmSharp;
-using ReactNative.Tracing;
 using ReactNative.Common;
 using ReactNative.Bridge;
-using Tizen;
 
 namespace ReactNative.DevSupport
 {

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using ReactNative.Tracing;
 using ReactNative.Common;
 using ReactNative.Bridge;
 using ElmSharp;
 using ReactNative.Views.Text;
-using Tizen;
 
 // The Content Dialog item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 

@@ -1,12 +1,7 @@
 ﻿using System;
 using ReactNative.UIManager;
 using ReactNative.UIManager.Annotations;
-using System.Collections;
-using ReactNative.Tracing;
 using ElmSharp;
-using System.Runtime.InteropServices;
-
-using Tizen;
 using ReactNative.Common;
 using Tizen.Applications;
 

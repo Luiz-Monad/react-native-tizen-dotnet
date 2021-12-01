@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using static System.FormattableString;
-using Tizen;
-using ReactNative.Common;
 namespace ReactNative.Animated
 {
     class InterpolationAnimatedNode : ValueAnimatedNode

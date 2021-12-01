@@ -1,16 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reactive;
-using System.Reactive.Concurrency;
-using System.Reactive.Linq;
-//using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-//using Windows.Storage.Streams;
-//using Windows.UI.Xaml;
-//using Windows.UI.Xaml.Media.Imaging;
-using static System.FormattableString;
-
-using ElmSharp;
 
 namespace ReactNative.Modules.Image
 {

@@ -7,11 +7,7 @@ using ReactNative.UIManager.Annotations;
 using ReactNative.UIManager.Events;
 
 using ElmSharp;
-using Tizen;
 using ReactNative.Common;
-
-//using System.Threading;
-using System.Runtime.InteropServices;
 
 namespace ReactNative.Views.ReactBorderDrawing
 {

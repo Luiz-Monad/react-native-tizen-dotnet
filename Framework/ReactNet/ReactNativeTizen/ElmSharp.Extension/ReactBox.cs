@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using ElmSharp;
 
-using Tizen;
 using ReactNative.Common;
-
-using ReactNative.UIManager;
 using System.Collections;
 
 namespace ReactNativeTizen.ElmSharp.Extension

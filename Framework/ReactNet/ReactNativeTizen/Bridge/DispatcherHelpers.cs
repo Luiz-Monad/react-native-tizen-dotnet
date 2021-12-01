@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
-
-using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;
 
 namespace ReactNative.Bridge

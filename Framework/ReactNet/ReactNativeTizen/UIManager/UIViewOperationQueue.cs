@@ -4,11 +4,7 @@ using ReactNative.Bridge;
 using ReactNative.Tracing;
 using ReactNative.Common;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading;
-using ElmSharp;
-using Tizen;
 using ReactNativeTizen.ElmSharp.Extension;
 
 namespace ReactNative.UIManager

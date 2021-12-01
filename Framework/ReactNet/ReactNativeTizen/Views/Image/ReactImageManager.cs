@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.IO;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
 
@@ -13,7 +12,6 @@ using ReactNative.Collections;
 
 using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;
-using Tizen;
 
 namespace ReactNative.Views.ReactImage
 {

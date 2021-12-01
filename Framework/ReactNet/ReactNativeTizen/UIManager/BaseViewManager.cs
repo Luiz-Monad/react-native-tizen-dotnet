@@ -2,8 +2,6 @@
 using Newtonsoft.Json.Linq;
 using ReactNative.UIManager.Annotations;
 using ElmSharp;
-
-using Tizen;
 using ReactNative.Common;
 using ReactNativeTizen.ElmSharp.Extension;
 

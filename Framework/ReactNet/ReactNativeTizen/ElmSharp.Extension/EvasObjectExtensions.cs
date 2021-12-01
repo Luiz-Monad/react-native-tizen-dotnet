@@ -1,14 +1,9 @@
 ﻿using System;
-using Newtonsoft.Json.Linq;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using static System.FormattableString;
 using ElmSharp;
-using Tizen;
 using ReactNative.Common;
 using ReactNative.UIManager;
-
-using System.Linq;
 
 namespace ReactNativeTizen.ElmSharp.Extension
 {

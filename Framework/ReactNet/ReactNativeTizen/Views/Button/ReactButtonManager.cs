@@ -6,8 +6,6 @@ using ReactNative.UIManager.Annotations;
 using ReactNative.Common;
 //using ReactNative.UIManager.Events;
 
-using Tizen;
-
 using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;
 

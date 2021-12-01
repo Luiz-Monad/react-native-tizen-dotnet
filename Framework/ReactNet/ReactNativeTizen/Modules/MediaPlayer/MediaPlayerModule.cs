@@ -1,9 +1,7 @@
 using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
+using ReactNative.Common;
 using ReactNative.Modules.Core;
-using System.Collections.Generic;
-using Tizen;
-using ElmSharp;
 
 namespace ReactNative.Modules.MediaPlayer
 {

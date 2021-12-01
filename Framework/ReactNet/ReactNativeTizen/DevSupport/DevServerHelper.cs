@@ -8,10 +8,7 @@ using System.Reactive.Disposables;
 using System.Threading;
 using System.Threading.Tasks;
 using static System.FormattableString;
-
 using ReactNative.Common;
-using ReactNative.Tracing;
-using Tizen;
 
 namespace ReactNative.DevSupport
 {

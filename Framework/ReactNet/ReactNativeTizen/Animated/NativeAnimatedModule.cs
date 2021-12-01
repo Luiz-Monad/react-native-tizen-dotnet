@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Timers;
 using System.Diagnostics;
 
 using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using ReactNative.Modules.Core;
 using ReactNative.UIManager;
-
-using Tizen;
 using ReactNative.Common;
 using ElmSharp;
 

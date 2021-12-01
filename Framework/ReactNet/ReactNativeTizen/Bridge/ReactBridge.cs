@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using ReactNative.Bridge.Queue;
 using ReactNative.Common;
-using ReactNative.Tracing;
 using System;
-using static System.FormattableString;
-using Tizen;
-
 
 namespace ReactNative.Bridge
 {

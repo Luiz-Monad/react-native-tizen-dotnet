@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 
 using System;
-//using System.Configuration;
-using static System.FormattableString;
 using ReactNative.Common;
 using ReactNative.Tracing;
 

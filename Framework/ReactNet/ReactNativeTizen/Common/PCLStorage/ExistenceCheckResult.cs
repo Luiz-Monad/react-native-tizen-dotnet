@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace PCLStorage
+﻿namespace PCLStorage
 {
     /// <summary>
     /// Describes the result of a file or folder existence check.

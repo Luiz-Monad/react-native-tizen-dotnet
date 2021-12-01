@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using PCLStorage;
 using ReactNative.Bridge;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Tizen;
 
 namespace ReactNative.Modules.Storage
 {

@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
@@ -9,10 +8,7 @@ using ReactNative.UIManager.Events;
 
 using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;
-using Tizen;
 using ReactNative.Common;
-
-//using System.Threading;
 
 namespace ReactNative.Views.ReactProgressBar
 {

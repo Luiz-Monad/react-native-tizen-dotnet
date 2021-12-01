@@ -6,10 +6,6 @@ using System;
 using System.Collections.Generic;
 using static System.FormattableString;
 
-
-using Tizen;
-using ReactNative.Common;
-
 namespace ReactNative.Animated
 {
     /// <summary>

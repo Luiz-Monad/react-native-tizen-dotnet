@@ -2,7 +2,6 @@
 using ReactNative.Bridge;
 
 using ElmSharp;
-using Tizen;
 
 namespace ReactNative.Modules.Dialog
 {

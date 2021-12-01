@@ -1,7 +1,5 @@
 ﻿using System;
 using ElmSharp;
-using ReactNative;
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNativeTizen.ElmSharp.Extension

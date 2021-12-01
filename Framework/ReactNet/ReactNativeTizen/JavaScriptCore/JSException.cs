@@ -25,7 +25,6 @@
 // THE SOFTWARE.
 
 using System;
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNative.JavaScriptCore

@@ -7,7 +7,6 @@ using ReactNative.Tracing;
 //using SocketMessaging;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;

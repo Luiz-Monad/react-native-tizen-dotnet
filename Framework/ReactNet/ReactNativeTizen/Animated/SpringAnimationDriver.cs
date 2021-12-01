@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using System;
-
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNative.Animated

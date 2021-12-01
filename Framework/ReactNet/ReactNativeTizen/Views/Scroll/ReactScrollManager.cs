@@ -7,11 +7,9 @@ using System.Collections.Generic;
 
 using static System.FormattableString;
 
-
 using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;
 
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNative.Views.Scroll

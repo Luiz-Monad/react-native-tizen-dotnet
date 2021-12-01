@@ -15,9 +15,6 @@ using Newtonsoft.Json.Linq;
 using System.Threading;
 
 using ReactNativeTizen.ElmSharp.Extension;
-using Tizen;
-
-using ReactNative.Modules.MediaPlayer; // for test
 
 namespace ReactNative
 {

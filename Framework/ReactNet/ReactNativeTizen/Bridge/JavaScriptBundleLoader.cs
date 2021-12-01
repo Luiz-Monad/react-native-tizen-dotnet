@@ -4,12 +4,7 @@ using System.Threading.Tasks;
 #if WINDOWS_UWP
 using Windows.Storage;
 #else
-using System.IO;
-using System.Reflection;
 #endif
-using static System.FormattableString;
-
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNative.Bridge

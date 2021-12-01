@@ -2,7 +2,6 @@
 using ReactNative.Bridge;
 using ReactNative.Modules.Core;
 using System;
-using ReactNative.Tracing;
 
 namespace ReactNative.Modules.NetInfo
 {

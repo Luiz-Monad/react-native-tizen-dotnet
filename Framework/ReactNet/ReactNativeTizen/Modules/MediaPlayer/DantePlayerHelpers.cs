@@ -2,11 +2,10 @@
 /// Basic data structure.  2017-06-27 BY YB
 /// </summary>
 
-using ElmSharp;
 
 namespace ReactNative.Modules.MediaPlayer
 {
-   public enum MediaType
+    public enum MediaType
     {
         Audio = 1,
         Video = 2,

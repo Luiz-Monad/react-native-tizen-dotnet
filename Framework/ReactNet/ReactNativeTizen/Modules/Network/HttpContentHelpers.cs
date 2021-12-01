@@ -6,7 +6,6 @@ using Windows.Web.Http.Headers;
 using HttpContentType = Windows.Web.Http.IHttpContent;
 #else
 using System.Net.Http;
-using System.Net.Http.Headers;
 using HttpContentType = System.Net.Http.HttpContent;
 using HttpStringContent = System.Net.Http.StringContent;
 using HttpMediaTypeHeaderValue = System.Net.Http.Headers.MediaTypeHeaderValue;

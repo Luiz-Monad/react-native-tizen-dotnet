@@ -1,4 +1,4 @@
-﻿using Tizen;
+﻿using ReactNative.Common;
 using ReactNative.UIManager;
 using ReactNativeTizen.ElmSharp.Extension;
 

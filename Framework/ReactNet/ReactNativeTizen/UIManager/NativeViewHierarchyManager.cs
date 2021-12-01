@@ -8,8 +8,6 @@ using System.Linq;
 using System.Collections.Generic;
 using static System.FormattableString;
 
-
-using Tizen;
 using ReactNative.Common;
 using ReactNativeTizen.ElmSharp.Extension;
 using ElmSharp;

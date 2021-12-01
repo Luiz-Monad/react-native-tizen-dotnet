@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json.Linq;
-using Tizen;
 
 namespace ReactNative.Modules.Storage
 {

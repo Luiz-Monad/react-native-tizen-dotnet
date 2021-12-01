@@ -2,14 +2,9 @@
 using Newtonsoft.Json.Linq;
 using PCLStorage;
 using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using ReactNative.Bridge;
 using static System.FormattableString;
-
-using Tizen;
 using ReactNative.Common;
 
 namespace ReactNative.JavaScriptCore.Executor

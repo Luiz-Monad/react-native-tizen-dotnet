@@ -11,7 +11,6 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using static System.FormattableString;
 
-using Tizen;
 using ReactNative.Common; 
 
 namespace ReactNative.UIManager

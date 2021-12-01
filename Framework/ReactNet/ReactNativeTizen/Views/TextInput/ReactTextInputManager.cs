@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using ReactNative.UIManager;
 using ReactNative.UIManager.Annotations;
 using ReactNative.Reflection;
-
-using Tizen;
 using ReactNative.Common;
 using ElmSharp;
 using ReactNativeTizen.ElmSharp.Extension;

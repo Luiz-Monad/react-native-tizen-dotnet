@@ -6,7 +6,6 @@ using ReactNative.Modules.Core;
 using Tizen.Applications;                   // application life-cycle
 using ReactNativeTizen.ElmSharp.Extension;  // ui control
 
-using Tizen;                                // FOR debug log
 using ReactNative.Common;
 
 using ElmSharp;

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Net.NetworkInformation;
 using Tizen.Network.Connection;
-using ReactNative.Tracing;
 
 namespace ReactNative.Modules.NetInfo
 {

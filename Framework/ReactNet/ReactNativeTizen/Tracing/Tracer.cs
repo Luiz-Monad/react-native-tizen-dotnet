@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-//using System.ComponentModel;
-
-using Tizen;
-
+using ReactNative.Common;
 
 namespace ReactNative.Tracing
 {

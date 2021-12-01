@@ -5,8 +5,6 @@ using ReactNative.UIManager;
 using ReactNative.UIManager.Annotations;
 //using ReactNative.Views.Text;
 using System;
-
-using Tizen;
 using ReactNative.Common;
 using Newtonsoft.Json.Linq;
 

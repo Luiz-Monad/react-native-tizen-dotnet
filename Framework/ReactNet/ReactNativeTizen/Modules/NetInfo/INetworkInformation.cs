@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.NetworkInformation;
-using Tizen.Network.Connection;
 
 namespace ReactNative.Modules.NetInfo
 {

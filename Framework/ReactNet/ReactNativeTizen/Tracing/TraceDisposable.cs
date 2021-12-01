@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using ReactNative.Common;
-using Tizen;
 
 namespace ReactNative.Tracing
 {

@@ -10,6 +10,5 @@
         /// </summary>
         public const string Tag = "RN";
         public const string Tag_JS = "RN_JS";
-
     }
 }

@@ -1,10 +1,5 @@
 ﻿using ReactNative.UIManager;
-using ReactNative.UIManager.Annotations;
-using ReactNative.Common;
 using System;
-using ElmSharp;
-using System.Runtime.InteropServices;
-using ReactNative.Tracing;
 
 namespace ReactNative.Views.Text
 {

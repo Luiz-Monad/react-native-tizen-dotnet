@@ -4,8 +4,6 @@ using ReactNative.UIManager;
 using ReactNative.UIManager.Annotations;
 using ReactNative.Common;
 using System;
-using ReactNative.Tracing;
-using Tizen;
 using ElmSharp;
 
 namespace ReactNative.Views.Text

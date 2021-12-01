@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using Tizen;
-using ReactNative.Common;
 namespace ReactNative.Animated
 {
     class MultiplicationAnimatedNode : ValueAnimatedNode

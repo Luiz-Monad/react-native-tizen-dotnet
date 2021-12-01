@@ -1,10 +1,6 @@
 ﻿using ReactNative.Bridge;
 using ReactNative.UIManager;
 using System;
-
-using System.Threading; // For waiting 'RenderPostHandler' event
-
-using Tizen;
 using ReactNative.Common;
 using ElmSharp;
 

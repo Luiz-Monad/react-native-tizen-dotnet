@@ -1,6 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
-
 //using ReactNative.Reflection;
 using ReactNative.Common;
 using ReactNative.UIManager;
@@ -8,7 +7,6 @@ using ReactNative.UIManager.Annotations;
 using ReactNative.Modules.Core;
 using ReactNativeTizen.ElmSharp.Extension;
 using ElmSharp;
-using Tizen;
 
 namespace ReactNative.Views.View
 {

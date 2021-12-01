@@ -1,11 +1,3 @@
-using System;
-using ReactNative.UIManager;
-using ReactNative.UIManager.Annotations;
-using System.Collections;
-using ReactNative.Tracing;
-using ElmSharp;
-using System.Runtime.InteropServices;
-
 namespace ReactNative.Views.ReactButton
 {
     public class ReactButtonUpdate

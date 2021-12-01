@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-
 using ElmSharp;
-using Tizen;
 using ReactNative.Common;
 
 using static System.FormattableString;
