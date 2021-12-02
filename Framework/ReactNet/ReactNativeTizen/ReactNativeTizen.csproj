@@ -11,20 +11,18 @@
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<DebugType>None</DebugType>
-		<DefineConstants />
+		<DefineConstants>TRACE</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+		<PackageReference Include="System.Reactive" Version="5.0.0" />
 		<PackageReference Include="Tizen.NET" Version="8.0.0.15631" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Facebook.Yoga">
 			<HintPath>Ref\Facebook.Yoga.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Reactive">
-			<HintPath>Ref\System.Reactive.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

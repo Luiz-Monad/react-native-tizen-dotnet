@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 
@@ -9,7 +10,8 @@ namespace ReactNative.Common
     //     Provides methods to print log messages to the Tizen logging system.
     public class Log
     {
-        private static TraceSource LogSource = new TraceSource("ReactNative");
+        private const string Tag = "ReactNative";
+        private static readonly Dictionary<string, TraceSource> LogSource = new Dictionary<string, TraceSource>();
 
         public enum LogLevel
         {
@@ -20,6 +22,21 @@ namespace ReactNative.Common
             Debug,
             Verbose
         }
+
+        private static TraceSource GetLogger(string tag)
+        {
+            lock (LogSource)
+            {
+                if (!LogSource.TryGetValue(tag, out var value))
+                {
+                    value = new TraceSource($"{Tag}.{tag}");
+                    LogSource.Add(tag, value);
+                }
+                return value;
+            }
+        }
+
+        private const string format = "{1}: {2}:{3} > {0}";
 
         //
         // Summary:
@@ -47,7 +64,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Debug(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Verbose, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Verbose, 1, format, message, file, func, line);
         }
 
         //
@@ -75,7 +92,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Error(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Error, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Error, 0, format, message, file, func, line);
         }
 
         //
@@ -103,7 +120,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Fatal(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Critical, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Critical, 0, format, message, file, func, line);
         }
 
         //
@@ -132,7 +149,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Info(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Information, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Information, 0, format, message, file, func, line);
         }
 
         //
@@ -161,7 +178,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Verbose(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Verbose, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Verbose, 0, format, message, file, func, line);
         }
 
         //
@@ -189,7 +206,7 @@ namespace ReactNative.Common
         [Conditional("TRACE")]
         public static void Warn(string tag, string message, [CallerFilePath] string file = "", [CallerMemberName] string func = "", [CallerLineNumber] int line = 0)
         {
-            LogSource.TraceEvent(TraceEventType.Warning, 0, $"{tag} - {Path.GetFileName(file)}.{func}: {message}");
+            GetLogger(tag).TraceEvent(TraceEventType.Warning, 0, format, message, file, func, line);
         }
 
     }
