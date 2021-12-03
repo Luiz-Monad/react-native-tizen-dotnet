@@ -1,29 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
-	</PropertyGroup>
 
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugType>portable</DebugType>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>None</DebugType>
-		<DefineConstants>TRACE</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-		<PackageReference Include="System.Reactive" Version="5.0.0" />
-		<PackageReference Include="Tizen.NET" Version="8.0.0.15631" />
-	</ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<Reference Include="Facebook.Yoga">
-			<HintPath>Ref\Facebook.Yoga.dll</HintPath>
-		</Reference>
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
+    <PackageReference Include="Tizen.NET" Version="8.0.0.15631" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Facebook.Yoga">
+      <HintPath>Ref\Facebook.Yoga.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>
