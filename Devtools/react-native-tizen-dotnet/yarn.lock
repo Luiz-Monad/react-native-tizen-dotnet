@@ -2097,6 +2097,16 @@ tizen-tv-dev-cli@^0.1.3:
     xml2js "^0.4.17"
     xmldom "^0.1.27"
 
+"tizen-tv-dev-cli@file:../tizen-tv-dev-cli":
+  version "0.1.9"
+  dependencies:
+    archiver "1.0.1"
+    node-forge "^0.7.1"
+    q "^1.5.0"
+    tizen-tv-dev-cli "^0.1.3"
+    xml2js "^0.4.17"
+    xmldom "^0.1.27"
+
 to-buffer@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/to-buffer/-/to-buffer-1.1.1.tgz#493bd48f62d7c43fcded313a03dcadb2e1213a80"

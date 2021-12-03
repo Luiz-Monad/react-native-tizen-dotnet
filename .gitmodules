@@ -1,0 +1,3 @@
+[submodule "tizen-tv-dev-cli"]
+	path = tizen-tv-dev-cli
+	url = https://github.com/Luiz-Monad/tizen-tv-dev-cli
