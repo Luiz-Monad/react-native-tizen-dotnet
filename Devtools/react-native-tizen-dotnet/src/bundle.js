@@ -1,6 +1,6 @@
 // @flow
 
-import fse from 'fs-extra';
+//import fse from 'fs-extra';
 import { execSync } from 'child_process';
 
 import { format, config, appPath, _log  } from './utlis';

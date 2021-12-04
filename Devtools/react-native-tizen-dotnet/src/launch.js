@@ -8,7 +8,7 @@ function targetIP() {
         throw('[Error] Can not launch without remote TV IP address...');
     }
     return config.tvip;
-};
+}
 
 function tpkPath(flag) {
     let mode;

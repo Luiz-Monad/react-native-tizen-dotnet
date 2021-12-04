@@ -116,8 +116,6 @@ packages/
 #Other files
 *.DotSettings
 .vs/
-.vscode/
-*project.lock.json
 
 #JavaScript files
 *.jsbundle
@@ -258,7 +256,6 @@ packages/
 #Other files
 *.DotSettings
 .vs/
-.vscode/
 *project.lock.json
 
 #JavaScript files
@@ -282,3 +279,12 @@ x64/
 x86/
 bld/
 [Ll]og/
+
+# Yarn2
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

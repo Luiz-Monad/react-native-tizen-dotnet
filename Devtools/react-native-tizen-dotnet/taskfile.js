@@ -1,3 +1,4 @@
+require('.pnp.cjs');
 const { join } = require('path');
 
 const paths = {
@@ -13,7 +14,9 @@ export default async function (fly) {
 export async function babel(fly, opts) {
   await fly.clear(paths.build)
     .source(opts.src || paths.source)
-    .babel({presets:['es2015']})
+    .babel({
+      presets:['env']
+    })
     .target(paths.build);
 }
 
